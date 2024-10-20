@@ -142,8 +142,6 @@ public class App {
      */
     synchronized public static void main(String... args) throws Exception {
         
-        DependencyFactory.resolveRegion(null);
-        System.exit(0);
         if (!init()){//init failed
             logger.error("Failed to init");//log the error
             System.exit(1);//exit application

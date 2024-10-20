@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: A Sample CloudFormation Template for a demo of SQSD
+
+Resources:
+  DemoQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: SQSD-Demo-Queue
+
+Outputs:
+  DemoQueueUrl:
+    Description: The Demo Queue's Queue URL.
+    Value: !Ref DemoQueue
+  DemoQueueName:
+    Description: The Demo Queue's name.
+    Value: !GetAtt DemoQueue.QueueName
