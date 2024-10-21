@@ -92,6 +92,24 @@ java -jar target/sqsd-1.0.0.jar --queue-url <Your-Queue-URL-Here> --regio
 n us-east-1
 ```
 
+#### Send a message to the queue
+
+>[!Note]
+>With SQSD running, a new terminal is required to perform this step. 
+
+>[!Note]
+>It is also possible to perform this step before starting SQSD.
+
+Once SQSD is started, messages sent to the queue will be consumed by the SQSD application. To send a messages to the demo SQS Queue, use the following command:
+
+```
+aws sqs send-message --queue-url <Your Queue URL Here> --message-body "Hello SQSD Demo" --region us-east-1
+```
+
+>[!Note]
+>Your version of the AWS CLI may require the message body to be base64 encoded. In this case, take the message body and run it through a base64 encoder. 
+>https://www.base64encode.org/ is one example of a site that will do this.
+
 #### Clean Up
 
 >[!Caution]
